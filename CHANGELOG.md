@@ -1,5 +1,58 @@
 # Changelog
 
+## [4.7.0](https://github.com/zenbones-theme/zenbones.nvim/compare/v4.6.0...v4.7.0) (2025-03-04)
+
+
+### Features
+
+* support Snacks.picker ([#209](https://github.com/zenbones-theme/zenbones.nvim/issues/209)) ([8e6b18c](https://github.com/zenbones-theme/zenbones.nvim/commit/8e6b18c3032378f61d0d1efdf191301804a3da1c))
+
+
+### Bug Fixes
+
+* **ci:** sync remote gitlab ([cdb980d](https://github.com/zenbones-theme/zenbones.nvim/commit/cdb980d8144ea789fa73b47b05b9d180af9ff5b1))
+
+## [4.6.0](https://github.com/zenbones-theme/zenbones.nvim/compare/v4.5.0...v4.6.0) (2025-02-16)
+
+
+### Features
+
+* support blink.cmp ([a92d8fa](https://github.com/zenbones-theme/zenbones.nvim/commit/a92d8fad347969490af0a95d6722b7f22344fef7))
+
+## [4.5.0](https://github.com/zenbones-theme/zenbones.nvim/compare/v4.4.0...v4.5.0) (2025-01-09)
+
+
+### Features
+
+* more fzf-lua support ([f860d70](https://github.com/zenbones-theme/zenbones.nvim/commit/f860d70d57f51134a9b7a54d8b39d8385744bcb1))
+
+## [4.4.0](https://github.com/zenbones-theme/zenbones.nvim/compare/v4.3.5...v4.4.0) (2024-10-03)
+
+
+### Features
+
+* render markdown codeblock bg ([#199](https://github.com/zenbones-theme/zenbones.nvim/issues/199)) ([f82c02d](https://github.com/zenbones-theme/zenbones.nvim/commit/f82c02d773b952f2cf0edd443665e4be0873e17d))
+
+
+### Bug Fixes
+
+* correct bug and clarify lazy.nvim install ([#202](https://github.com/zenbones-theme/zenbones.nvim/issues/202)) ([88960c8](https://github.com/zenbones-theme/zenbones.nvim/commit/88960c8aa3ad8aff0bcccdce7cd23629c7a3c510))
+
+## [4.3.5](https://github.com/zenbones-theme/zenbones.nvim/compare/v4.3.4...v4.3.5) (2024-08-24)
+
+
+### Bug Fixes
+
+* add lazy.nvim instructions ([6c01e4c](https://github.com/zenbones-theme/zenbones.nvim/commit/6c01e4cd3a4e8ae4321069bfb814cac1e2b2a07e))
+* improve diff ([168593f](https://github.com/zenbones-theme/zenbones.nvim/commit/168593f4ad8dc79fce52b88b5cf90447536d0a81))
+
+## [4.3.4](https://github.com/zenbones-theme/zenbones.nvim/compare/v4.3.3...v4.3.4) (2024-08-23)
+
+
+### Bug Fixes
+
+* Leap highlight are out of date ([#195](https://github.com/zenbones-theme/zenbones.nvim/issues/195)) ([b433225](https://github.com/zenbones-theme/zenbones.nvim/commit/b433225e29de5955a70b3e25a762cfaf2cf24a3d))
+
 ## [4.3.3](https://github.com/zenbones-theme/zenbones.nvim/compare/v4.3.2...v4.3.3) (2024-08-08)
 
 

@@ -69,7 +69,7 @@ local function generate(p, opt)
 
 			NormalFloat     { bg = p1.bg.li(10) }, -- Normal text in floating windows.
 			FloatBorder     { fg = p1.bg.li(46), bg = opt.solid_float_border and NormalFloat.bg or "NONE" }, -- Normal text in floating windows.
-			-- FloatTitle      { },
+			FloatTitle      { fg = p.fg, bg = NormalFloat.bg, gui = "bold" },
 			-- FloatFooter     { },
 
 			Pmenu           { bg = p1.bg.li(10) }, -- Popup menu: normal item.
@@ -298,9 +298,9 @@ local function generate(p, opt)
 			sym "@markup.list.checked"          { sym "@markup.list" },
 			sym "@markup.list.unchecked"        { sym "@markup.list" },
 
-			sym "@diff.plus"                    { fg = p.leaf },
-			sym "@diff.minus"                   { fg = p.rose },
-			sym "@diff.delta"                   { fg = p.water },
+			sym "@diff.plus"                    { DiffAdd },
+			sym "@diff.minus"                   { DiffDelete },
+			sym "@diff.delta"                   { DiffChange },
 
 			sym "@tag"                          { Special },
 			sym "@tag.attribute"                { sym "@property" },
@@ -367,9 +367,9 @@ local function generate(p, opt)
 			sym "@lsp.typemod.variable.static"            { sym "@constant" },
 
 			-- Syntax
-			diffAdded                 { fg = p.leaf },
-			diffRemoved               { fg = p.rose },
-			diffChanged               { fg = p.water },
+			diffAdded                 { DiffAdd },
+			diffRemoved               { DiffDelete },
+			diffChanged               { DiffChange },
 			diffOldFile               { fg = p.rose, gui = "italic" },
 			diffNewFile               { fg = p.leaf, gui = "italic" },
 			diffFile                  { fg = p.wood, gui = "bold" },
@@ -399,9 +399,14 @@ local function generate(p, opt)
 
 			IblIndent                        { fg = p1.bg.li(8).de(22) },
 			IblScope                         { fg = p1.bg.li(22).de(22) },
-
 			IndentLine                       { IblIndent },
 			IndentLineCurrent                { IblScope },
+			SnacksIndent                     { fg = p1.bg.li(8).de(22) },
+			SnacksIndentScope                { fg = p1.bg.li(22).de(22) },
+			SnacksPickerBorder               { NormalFloat },
+			SnacksPickerListCursorLine       { CursorLine },
+			SnacksPickerMatch                { fg = p.sky, gui = "bold"  },
+			SnacksPickerPreviewCursorLine    { CursorLine },
 
 			TelescopeSelection               { CursorLine },
 			TelescopeSelectionCaret          { TelescopeSelection, fg = p.rose },
@@ -419,15 +424,17 @@ local function generate(p, opt)
 			FzfLuaTabTitle                   { fg = p.sky },
 			FzfLuaTabMarker                  { fg = p.leaf },
 			FzfLuaLiveSym                    { fg = p.wood },
+			FzfLuaTitle                      { Title },
+			FzfLuaFzfCursorLine              { CursorLine },
+			FzfLuaFzfMatch                   { fb = p.blossom, gui = "bold" },
 
 			Sneak                            { Search },
 			SneakLabel                       { WildMenu },
 			SneakLabelMask                   { bg = p.blossom, fg = p.blossom },
 
 			LeapMatch                        { gui = "bold,underline,nocombine" },
-			LeapLabelPrimary                 { Search , gui = "bold,nocombine" },
-			LeapLabelSecondary               { DiffText, gui = "bold,nocombine" },
-			LeapLabelSelected                { IncSearch },
+			LeapBackdrop                     { gui = "nocombine", fg = p.bg.lightness(p.bg.l + 20) },
+			LeapLabel                        { fg = p.blossom.lightness(p1.bg.l + 56).sa(80), gui = "bold" },
 
 			HopNextKey                       { fg = p.blossom, gui = "bold,underline" },
 			HopNextKey1                      { fg = p.sky, gui = "bold,underline" },
@@ -492,6 +499,11 @@ local function generate(p, opt)
 			CmpItemKind                      { fg = p1.fg4 },
 			CmpItemMenu                      { fg = p1.fg5 },
 
+			BlinkCmpLabelDetail              { Type },
+			BlinkCmpLabelDescription         { Type },
+			BlinkCmpSource                   { Type },
+			BlinkCmpKind                     { fg = p1.fg4 },
+
 			NnnNormal                        { NvimTreeNormal },
 			NnnNormalNC                      { NnnNormal },
 			NnnWinSeparator                  { NvimTreeWinSeparator },
@@ -530,6 +542,8 @@ local function generate(p, opt)
 			NotifyDEBUGTitle                 { DiagnosticHint },
 			NotifyTRACEIcon                  { DiagnosticHint },
 			NotifyTRACETitle                 { DiagnosticHint },
+
+			RenderMarkdownCode { bg = LspInlayHint.bg },
 		}
 	end)
 	-- stylua: ignore end
